@@ -1,5 +1,5 @@
 package by.blog.dmitry.contollers;
-import by.blog.dmitry.repository.ComentRepository;
+import by.blog.dmitry.service.ComentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.GetMapping;
     public class MainController {
 
         @Autowired
-        private ComentRepository comentRepository;
+        private ComentService comentService;
         @GetMapping("/")
         public String greeting( Model model) {
-            model.addAttribute("coments",comentRepository.findAll());
+            model.addAttribute("coments",comentService.findAll());
             return "main";
         }
 
