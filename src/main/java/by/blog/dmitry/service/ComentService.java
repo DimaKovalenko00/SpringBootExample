@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Service
-public abstract class ComentService  {
+public class ComentService  {
     @Autowired ComentRepository comentRepository;
     public List<Coment> findAll(){
         List<Coment> list = (List) comentRepository.findAll();
