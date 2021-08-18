@@ -3,22 +3,22 @@
 <#import "parts/carusel.ftl" as k>
 <@c.page>
 <@n.nav />
-<div style="width: 80%; height: 200px;margin-left: 10%">
+<div style="width: 80%; margin-left:150px;">
   <div id="carouselExampleIndicators " class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
       </div>
-      <div class="carousel-inner ">
+      <div class="carousel-inner">
           <div class="carousel-item active">
-              <img src="@{/../static/image/11.png}" class="d-block w-600" alt="...">
+              <img src="11.png" width="15%" height="15%" alt="no Photo">
+          </div>
+          <div class="carousel-item ">
+              <img src="11.png" width="15%" height="15% alt="no Photo2">
           </div>
           <div class="carousel-item">
-              <img src="/image/moya.jpg" class="d-block w-600" alt="...">
-          </div>
-          <div class="carousel-item">
-              <img src="11.png" class="d-block w-600" alt="...">
+              <img src="11.png" width="15%" height="15% alt="no Photo3">
           </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"  data-bs-slide="prev">
@@ -33,24 +33,33 @@
 </div>
 <#--<@k.car>-->
     <div>
+<br>
+        <br>
+        <br>
+        <br>
 
-
-<div class="mt-2 ml-4"><ul class="nav nav-tabs" id="myTab" role="tablist">
-    <li class="nav-item" role="presentation">
+<div style="margin-left: 150px; margin-right: 150px;margin-top: 5%;">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
         <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">О себе</button>
-    </li>
-    <li class="nav-item" role="presentation">
+        </li>
+
+        <li class="nav-item" role="presentation">
         <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Технологии </button>
     </li>
     <li class="nav-item" role="presentation">
         <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Проекты</button>
     </li>
 </ul>
-<div class="tab-content" id="myTabContent">
+<div class="tab-content" style="margin-left: 150px; height: 600px; margin-right: 150px;margin-top: 5%;" id="myTabContent">
     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">Желаемая должность:
         •	Java-Web developer back-end
         <br/>
-        Занятость: постоянная
+        <#list experiences as experience>
+    <div>
+        <label><input type="checkbox" name="${experience.company}" >${experience.company}</label>
+    </div>
+        </#list> Занятость: постоянная
         Опыт работы: 2 месяца
         <br/>
         Иностранные языки: А1
